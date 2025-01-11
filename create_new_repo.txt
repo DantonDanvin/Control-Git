@@ -70,7 +70,7 @@ In sort:- create new repository
     git branch -M main
     git branch  
     git remote add origin https://github.com/DantonDanvin/demo.git
-    git push -u origin main
+    git push -u origin main // geting error
     git pull origin main --allow-unrelated-histories
     git add .
     git commit -m "Resolve merge conflicts"
@@ -101,4 +101,4 @@ To https://github.com/DantonDanvin/demo.git
 In sort:- now add or updates some file
     git add .
     git commit -m "now add or updates some file"
-    git push -u origin main
+    git push
