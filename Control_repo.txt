@@ -110,3 +110,6 @@ In sort:- now add or updates some file
 
 In sort:- clone repository
    git clone <your repo HTTPS url> 
+
+
+-----------------------completed-------------------------------
