@@ -1,1 +1,86 @@
-hi
+PS C:\Users\manthan\Desktop\VScode> cd .\javascript\
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git init
+Initialized empty Git repository in C:/Users/manthan/Desktop/VScode/javascript/.git/
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git add .
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git commit -m "Initial commit"
+[master (root-commit) 5bc8cf2] Initial commit
+ 2 files changed, 80 insertions(+)
+ create mode 100644 Xpath_print.html
+ create mode 100644 get-Xpath.js
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git branch
+* master
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git branch -M main
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git branch        
+* main
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git remote add origin https://github.com/DantonDanvin/demo.git
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git push -u origin main
+To https://github.com/DantonDanvin/demo.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/DantonDanvin/demo.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git pull origin main --allow-unrelated-histories
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1.45 KiB | 57.00 KiB/s, done.
+From https://github.com/DantonDanvin/demo
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+Merge made by the 'ort' strategy.
+ LICENSE | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+ create mode 100644 LICENSE
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git add .
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git commit -m "Resolve merge conflicts"
+On branch main
+nothing to commit, working tree clean
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git push -u origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.52 KiB | 776.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/DantonDanvin/demo.git
+   d32ad39..0ed2ca2  main -> main
+branch 'main' set up to track 'origin/main'.
+
+
+
+// now add or updates new file
+
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git add .
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git commit -m "add new file"
+[main 324d9a5] add new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 create_new_repo.txt
+
+PS C:\Users\manthan\Desktop\VScode\javascript> git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 284.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/DantonDanvin/demo.git
+   0ed2ca2..324d9a5  main -> main
