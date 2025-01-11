@@ -1,3 +1,5 @@
+// create new repository
+
 PS C:\Users\manthan\Desktop\VScode> cd .\javascript\
 
 PS C:\Users\manthan\Desktop\VScode\javascript> git init
@@ -70,7 +72,7 @@ In sort:- create new repository
     git branch -M main
     git branch  
     git remote add origin https://github.com/DantonDanvin/demo.git
-    git push -u origin main // geting error
+    git push -u origin main // get error
     git pull origin main --allow-unrelated-histories
     git add .
     git commit -m "Resolve merge conflicts"
@@ -102,3 +104,9 @@ In sort:- now add or updates some file
     git add .
     git commit -m "now add or updates some file"
     git push
+
+
+// clone a repository
+
+In sort:- clone repository
+   git clone <your repo HTTPS url> 
