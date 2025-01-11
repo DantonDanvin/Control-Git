@@ -62,10 +62,23 @@ To https://github.com/DantonDanvin/demo.git
    d32ad39..0ed2ca2  main -> main
 branch 'main' set up to track 'origin/main'.
 
+In sort:- create new repository
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git branch  // check current branch
+    git branch -M main
+    git branch  
+    git remote add origin https://github.com/DantonDanvin/demo.git
+    git push -u origin main
+    git pull origin main --allow-unrelated-histories
+    git add .
+    git commit -m "Resolve merge conflicts"
+    git push -u origin main
 
 
-// now add or updates new file
 
+// now add or updates some file
 
 PS C:\Users\manthan\Desktop\VScode\javascript> git add .
 
@@ -84,3 +97,8 @@ Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/DantonDanvin/demo.git
    0ed2ca2..324d9a5  main -> main
+
+In sort:- now add or updates some file
+    git add .
+    git commit -m "now add or updates some file"
+    git push -u origin main
