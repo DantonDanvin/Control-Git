@@ -1,115 +1,96 @@
+// Configuring Git
+   git config --global user.name "Your Name"
+   git config --global user.email "your-email@example.com"
+
+   // for Checking config
+   git config --list
+
+
 // create new repository
-
-PS C:\Users\manthan\Desktop\VScode> cd .\javascript\
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git init
-Initialized empty Git repository in C:/Users/manthan/Desktop/VScode/javascript/.git/
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git add .
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git commit -m "Initial commit"
-[master (root-commit) 5bc8cf2] Initial commit
- 2 files changed, 80 insertions(+)
- create mode 100644 Xpath_print.html
- create mode 100644 get-Xpath.js
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git branch
-* master
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git branch -M main
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git branch        
-* main
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git remote add origin https://github.com/DantonDanvin/demo.git
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git push -u origin main
-To https://github.com/DantonDanvin/demo.git
- ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/DantonDanvin/demo.git'
-hint: Updates were rejected because the remote contains work that you do not
-hint: have locally. This is usually caused by another repository pushing to
-hint: the same ref. If you want to integrate the remote changes, use
-hint: 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git pull origin main --allow-unrelated-histories
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
-Unpacking objects: 100% (3/3), 1.45 KiB | 57.00 KiB/s, done.
-From https://github.com/DantonDanvin/demo
- * branch            main       -> FETCH_HEAD
- * [new branch]      main       -> origin/main
-Merge made by the 'ort' strategy.
- LICENSE | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
- create mode 100644 LICENSE
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git add .
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git commit -m "Resolve merge conflicts"
-On branch main
-nothing to commit, working tree clean
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git push -u origin main
-Enumerating objects: 7, done.
-Counting objects: 100% (7/7), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (6/6), 1.52 KiB | 776.00 KiB/s, done.
-Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/DantonDanvin/demo.git
-   d32ad39..0ed2ca2  main -> main
-branch 'main' set up to track 'origin/main'.
-
-In sort:- create new repository
-    git init
-    git add .
-    git commit -m "Initial commit"
-    git branch  // check current branch
-    git branch -M main
-    git branch  
-    git remote add origin https://github.com/DantonDanvin/demo.git
-    git push -u origin main // get error
-    git pull origin main --allow-unrelated-histories
-    git add .
-    git commit -m "Resolve merge conflicts"
-    git push -u origin main
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch  // check current branch
+   git branch -M main // if want main branch
+   git branch  
+   git remote add origin https://github.com/DantonDanvin/Control_Repo.git
+   git push -u origin main 
+   // if get error
+   git pull origin main --allow-unrelated-histories
+   git add .
+   git commit -m "Resolve merge conflicts"
+   git push -u origin main
 
 
 
-// now add or updates some file
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git add .
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git commit -m "add new file"
-[main 324d9a5] add new file
- 1 file changed, 1 insertion(+)
- create mode 100644 create_new_repo.txt
-
-PS C:\Users\manthan\Desktop\VScode\javascript> git push
-Enumerating objects: 4, done.
-Counting objects: 100% (4/4), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 284 bytes | 284.00 KiB/s, done.
-Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To https://github.com/DantonDanvin/demo.git
-   0ed2ca2..324d9a5  main -> main
-
-In sort:- now add or updates some file
-    git add .
-    git commit -m "now add or updates some file"
-    git push
+// add or updates some file
+   git add .
+   git commit -m "now add or updates some file"
+   git push
 
 
 // clone a repository
+   git clone <repository_url>
 
-In sort:- clone repository
-   git clone <your repo HTTPS url> 
+// Checking Repository Status
+   git status
+
+// Viewing Commit History
+   git log --oneline
+
+// Branching in Git
+   // List branches:
+      git branch
+   // Create a new branch:
+      git branch new-branch
+   // Delete a branch:
+      git branch -d branch-name
+
+// Switching Branches
+   git switch branch-name
+   or 
+   git checkout branch-name
+
+// Merging Branches
+   git merge branch-name
+
+// Remote Repository Management
+   // List remote repositories:
+      git remote -v
+   // Add a remote repository:
+      git remote add origin <repository_url>
+   // Remove a remote:
+      git remote remove origin
+
+// Fetching and Pulling Changes
+   // Download changes without merging:
+      git fetch origin
+   // Fetch and merge changes from the remote repository:
+      git pull origin main
+
+// Pushing Changes to Remote
+   // Push changes to the remote repository:
+      git push origin branch-name
+   // Force push (use with caution):
+      git push --force
+
+// Reverting Changes
+   // Undo a commit by creating a new commit:
+      git revert <commit_hash>
+
+// Deleting Files
+   // Remove a file and stage the deletion:
+      git rm filename.txt
+   // Remove a file from Git but keep it locally:
+      git rm --cached filename.txt
+
+// Tagging a Version
+   // Create a new tag:
+      git tag v1.0
+   // Push tags:
+      git push origin --tags
+
+
 
 
 -----------------------completed-------------------------------
