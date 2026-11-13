@@ -1,29 +1,38 @@
 // Configuring Git
    git config --global user.name "Your Name"
    git config --global user.email "your-email@example.com"
+   git config --global pull.rebase false   // default: pull = merge (avoids "divergent branches" error)
+   git config --global init.defaultBranch main   // new repos start on main instead of master
 
    // for Checking config
    git config --list
 
 
 // create new repository
+   // TIP: when creating the repo on GitHub, DON'T add README/.gitignore/License
+   //      -> then the simple push works with no errors
    git init
    git add .
    git commit -m "Initial commit"
-   git branch  // check current branch
-   git branch -M main // if want main branch
-   git branch  
+   git branch                // check current branch
+   git branch -M main        // rename to main (if it's master)
    git remote add origin https://github.com/DantonDanvin/Control_Repo.git
-   git push -u origin main 
-   // if get error
-   git pull origin main --allow-unrelated-histories
-   git add .
-   git commit -m "Resolve merge conflicts"
    git push -u origin main
 
+   // if push is rejected ("fetch first" / "non-fast-forward")
+   // -> GitHub repo already has files (README etc.) that you don't have locally
+   git pull origin main --allow-unrelated-histories --no-rebase
+      // if editor opens -> save & close (nano: Ctrl+O, Enter, Ctrl+X | vim: :wq)
+      // if CONFLICT -> open the file, remove <<<<<<< ======= >>>>>>> markers, then:
+      git add .
+      git commit -m "Merge remote main"
+   git push -u origin main
+
+   // OR, if remote only has a README you don't need (fresh repo only!):
+   git push -u origin main --force
 
 
-// add or updates some file
+// add or update some files
    git add .
    git commit -m "now add or updates some file"
    git push
@@ -37,18 +46,21 @@
 
 // Viewing Commit History
    git log --oneline
+   git log --oneline --graph --all   // see branches visually
 
 // Branching in Git
    // List branches:
       git branch
    // Create a new branch:
       git branch new-branch
+   // Create and switch in one step:
+      git switch -c new-branch
    // Delete a branch:
       git branch -d branch-name
 
 // Switching Branches
    git switch branch-name
-   or 
+   or
    git checkout branch-name
 
 // Merging Branches
@@ -59,6 +71,8 @@
       git remote -v
    // Add a remote repository:
       git remote add origin <repository_url>
+   // Change remote URL (wrong URL added):
+      git remote set-url origin <repository_url>
    // Remove a remote:
       git remote remove origin
 
@@ -71,10 +85,16 @@
 // Pushing Changes to Remote
    // Push changes to the remote repository:
       git push origin branch-name
-   // Force push (use with caution):
+   // Push a new branch and set upstream:
+      git push -u origin branch-name
+   // Force push (use with caution - overwrites remote):
       git push --force
 
-// Reverting Changes
+// Undoing Changes
+   // Discard changes in a file (not yet staged):
+      git restore filename.txt
+   // Unstage a file (undo git add):
+      git restore --staged filename.txt
    // Undo a commit by creating a new commit:
       git revert <commit_hash>
 
